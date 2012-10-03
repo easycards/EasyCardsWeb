@@ -1,0 +1,28 @@
+@(form: Form[(String, String)])(implicit lang: Lang, request: play.api.mvc.Request[Any])
+@import views.html.common.bootstrap._
+@main(Messages("security.login.title"), None){
+<div class="row">
+    <div class="span12">
+        @form.globalError.map { error =>
+        <div class="alert alert-error">
+            @error.message
+        </div>
+        }
+        <form method="POST" class="form-horizontal" action="@routes.Security.login">
+            <fieldset>
+                <legend><i class="icon-key"></i>
+                    @Messages("security.login.form.legend")
+                </legend>
+                @inputEmail(form("email"))
+                @helper.inputPassword(form("password"))
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="icon-unlock"></i>&nbsp;@Messages("security.login.submitButtonText")
+                    </button> @Messages("security.login.form.or")
+                    <a href="@routes.Security.signUp">@Messages("security.login.signUpLink")</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+}

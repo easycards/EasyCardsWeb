@@ -1,0 +1,19 @@
+@(form: Form[Vocabulary],user: Option[User],languages: Seq[(String,String)])(implicit lang: Lang, request: play.api.mvc.Request[Any])
+@import views.html.common.bootstrap._
+@main(Messages("vocabulary.create.title"), user){
+     <form method="POST" class="form-horizontal">
+         <fieldset>
+             <legend>@Messages("vocabulary.create.form.legend")</legend>
+             @helper.inputText(form("title"),'_label -> Messages("vocabulary.create.form.title"))
+             @helper.select(form("sourceLanguage"),languages,
+                '_label -> Messages("vocabulary.create.form.sourceLanguage"),
+                '_default -> Messages("vocabulary.create.form.sourceLanguageDefaultValue"))
+             @helper.select(form("targetLanguage"),languages,
+                '_label -> Messages("vocabulary.create.form.targetLanguage"),
+                '_default -> Messages("vocabulary.create.form.targetLanguageDefaultValue"))
+             <div class="form-actions">
+                 <button type="submit" class="btn btn-primary">@Messages("vocabulary.create.form.submit")</button>
+             </div>
+         </fieldset>
+     </form>
+}

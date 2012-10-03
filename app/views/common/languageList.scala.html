@@ -1,0 +1,16 @@
+@(languages:Seq[(String, String)])(implicit lang:Lang)
+<div class="page-header">
+    <h3>@languages.find(p => p._1.equals(lang.code)).map{c=>
+        <i class="flag64 flag-@c._1"></i>
+        }
+        @Messages("language.changeLocale.pageHeader")
+    </h3>
+</div>
+@languages.filterNot(p => p._1.equals(lang.code)).map{l=>
+<div>
+    <a href='@routes.Language.changeLocale(l._1)'><i class="flag flag-@l._1"></i>
+        @l._2
+    </a>
+    <hr/>
+</div>
+}

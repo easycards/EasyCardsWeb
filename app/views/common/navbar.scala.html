@@ -1,0 +1,45 @@
+@(user:Option[User])(implicit lang:Lang)
+@import views.html.common._
+<nav class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="@routes.Application.index">EasyCards</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="@routes.Application.index">
+                        <i class="icon-home"></i>
+                        @Messages("main.nav.home")</a></li>
+                    @if(user.isDefined){
+                    <li><a href="@routes.Vocabulary.createView">
+                        <i class="icon-plus"></i>
+                        @Messages("main.nav.create")</a></li>
+                    }
+                    <li><a href="@routes.Vocabulary.list">
+                        <i class="icon-book"></i>
+                        @Messages("main.nav.vocabularies")
+                    </a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        @languageMenu(Seq("gb"->"English","de"->"Deutsch","ru"->"Русский"))
+                    </li>
+                    @if(user.isDefined){
+                    <li><a href="#"><i class="icon-wrench"></i>@Messages("main.nav.settings")</a>
+                    </li>
+                    <li><a href="@routes.Security.logout">
+                        <i class="icon-signout"></i>@Messages("main.nav.signOut")</a></li>
+                    }else{
+                    <li><a href='@routes.Security.loginView'>
+                        <i class="icon-signin"></i>@Messages("main.nav.signIn")
+                    </a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

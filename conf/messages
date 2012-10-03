@@ -1,0 +1,37 @@
+email=Email
+password=Password
+error.required=This field is required
+
+main.nav.create=New Vocabulary
+main.nav.home=Home
+main.nav.signOut=Sign Out
+main.nav.signIn=Sign In
+main.nav.settings=Settings
+main.nav.vocabularies=Vocabularies
+
+vocabulary.create.title=Create new vocabulary
+vocabulary.create.form.legend=New Vocabulary
+vocabulary.create.form.title=Title
+vocabulary.create.verifying.error=An error occurred during creating a new vocabulary
+vocabulary.create.form.sourceLanguage=Source language
+vocabulary.create.form.targetLanguage=Target language
+vocabulary.create.form.sourceLanguageDefaultValue=Choose a language
+vocabulary.create.form.targetLanguageDefaultValue=Choose a language
+vocabulary.create.form.submit=Save
+vocabulary.list.table.header.title=Title
+vocabulary.list.table.header.sourceLanguage=Source language
+vocabulary.list.table.header.targetLanguage=Target language
+
+security.login.signUpLink=Sign up for EasyCards
+security.login.submitButtonText=Log In
+security.login.title=Log into EasyCards
+security.login.form.legend=Sign in to EasyCards
+security.login.form.or=or
+
+security.signUp.title=Sign up for EasyCards
+security.signUp.form.legend=Sign up for EasyCards
+security.signUp.form.submitButton=Sign up
+security.signUp.form.name=Name
+
+language.changeLocale.pageHeader=Change the interface language
+

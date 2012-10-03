@@ -1,0 +1,22 @@
+@(user: Option[User], vocabularies:Seq[Vocabulary])(implicit lang: Lang, request: play.api.mvc.Request[Any])
+
+@main(Messages("vocabulary.create.title"), user){
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>@Messages("vocabulary.list.table.header.title")</th>
+                <th>@Messages("vocabulary.list.table.header.sourceLanguage")</th>
+                <th>@Messages("vocabulary.list.table.header.targetLanguage")</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(vocabulary <- vocabularies){
+            <tr>
+                <td><a href="@routes.WordDefinition.list(vocabulary.id.get)">@vocabulary.title</a></td>
+                <td>@vocabulary.sourceLanguage</td>
+                <td>@vocabulary.targetLanguage</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,5 @@
+@(user: Option[User])(implicit lang: Lang, request: play.api.mvc.Request[Any])
+@import views.html.common._
+@main(Messages("vocabulary.create.title"), user){
+    @languageList(Seq("gb"->"English","de"->"Deutsch","ru"->"Русский"))
+}

@@ -1,0 +1,17 @@
+@(languages:Seq[(String, String)])(implicit lang:Lang)
+<a href="@routes.Language.changeLocaleView" class="dropdown-toggle" data-toggle="dropdown">
+    @languages.find(p => p._1.equals(lang.code)).map{c=>
+    <i class="flag flag-@c._1"></i>
+        @c._2
+    }
+    <b class="caret"></b>
+</a>
+<ul class="dropdown-menu">
+    @languages.filterNot(p => p._1.equals(lang.code)).map{l=>
+    <li>
+        <a href='@routes.Language.changeLocale(l._1)'><i class="flag flag-@l._1"></i>
+            @l._2
+        </a>
+    </li>
+    }
+</ul>

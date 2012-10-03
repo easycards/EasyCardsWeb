@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+#Security
+GET     /login                      controllers.Security.loginView
+POST    /login                      controllers.Security.login
+GET     /signUp                     controllers.Security.signUpView
+POST    /signUp                     controllers.Security.signUp
+GET     /logout                     controllers.Security.logout
+# Vocabulary
+GET     /vocabulary/create          controllers.Vocabulary.createView
+POST    /vocabulary/create          controllers.Vocabulary.create
+GET     /vocabulary/list            controllers.Vocabulary.list
+# WordDefinition
+GET     /word/list/:vocabularyId    controllers.WordDefinition.list(vocabularyId:Long)
+# Language
+GET     /language/change/:locale    controllers.Language.changeLocale(locale:String)
+GET     /languages                  controllers.Language.changeLocaleView
