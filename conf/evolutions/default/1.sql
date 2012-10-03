@@ -2,8 +2,6 @@
 
 # --- !Ups
 
-set ignorecase true;
-
 create table users (
   id                    serial,
   email                 varchar(255) not null UNIQUE,

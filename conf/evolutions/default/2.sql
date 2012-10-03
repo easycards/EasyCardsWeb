@@ -2,8 +2,6 @@
 
 # --- !Ups
 
-set ignorecase true;
-
 create table vocabulary (
   id                    serial primary key,
   title                 varchar(255) not null,

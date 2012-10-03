@@ -13,9 +13,8 @@ class VocabularyRepository_Tests extends Specification {
     "Create vocabulary" in {
       running(FakeApplication(additionalConfiguration = inMemoryDatabase())) {
         val vocabulary = new Vocabulary("Test", "en", "ru")
-        vocabulary.userId = 1
-        VocabularyRepository.create(vocabulary)
-        val vocabularyId = VocabularyRepository.create(vocabulary)
+        VocabularyRepository.create(vocabulary.copy(userId = 1))
+        val vocabularyId = VocabularyRepository.create(vocabulary.copy(userId = 1))
         vocabularyId must equalTo(2)
       }
     }
