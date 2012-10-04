@@ -37,15 +37,13 @@ object VocabularyRepository extends VocabularyService {
         SQL(
           """
             insert into vocabulary(title, sourceLanguage, targetLanguage, userId)
-            values({title}, {sourceLanguage}, {targetLanguage}, {userId});
+            values({title}, {sourceLanguage}, {targetLanguage}, {userId})
+            returning ID;
           """
         ).on(
           'title -> vocabulary.title,
           'sourceLanguage -> vocabulary.sourceLanguage,
           'targetLanguage -> vocabulary.targetLanguage,
-          'userId -> vocabulary.userId
-        ).executeUpdate
-        SQL("select max(id) from vocabulary where userId = {userId};").on(
           'userId -> vocabulary.userId
         ).as(scalar[Long].single)
     }
