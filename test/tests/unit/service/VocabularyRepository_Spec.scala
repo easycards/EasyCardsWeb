@@ -10,7 +10,7 @@ import models.Vocabulary
 import play.api.test.FakeApplication
 import play.api.Play.current
 
-class VocabularyRepository_Tests extends Specification {
+class VocabularyRepository_Spec extends Specification {
   override def is = args(sequential = true) ^ super.is
   "VocabularyRepository" should {
     "Create vocabulary" in new database {
@@ -33,6 +33,7 @@ class VocabularyRepository_Tests extends Specification {
     }
   }
 }
+
 trait database extends After{
   def after = {
     running(FakeApplication(additionalConfiguration = postgresTest())){
