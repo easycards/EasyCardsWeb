@@ -14,11 +14,11 @@ GET     /signUp                     controllers.Security.signUpView
 POST    /signUp                     controllers.Security.signUp
 GET     /logout                     controllers.Security.logout
 # Vocabulary
-GET     /vocabulary/create          controllers.Vocabulary.createView
-POST    /vocabulary/create          controllers.Vocabulary.create
-GET     /vocabulary/list            controllers.Vocabulary.list
+GET     /book/create                controllers.Vocabulary.createView
+POST    /book/create                controllers.Vocabulary.create
+GET     /book/list                  controllers.Vocabulary.list
 # WordDefinition
-GET     /word/list/:vocabularyId    controllers.WordDefinition.list(vocabularyId:Long)
+GET     /book/:vocabularyId         controllers.WordDefinition.list(vocabularyId:Long)
 # Language
 GET     /language/change/:locale    controllers.Language.changeLocale(locale:String)
 GET     /languages                  controllers.Language.changeLocaleView
