@@ -15,3 +15,5 @@ dist
 *.DS_STORE
 db/*
 
+
+conf/application.conf
