@@ -1,33 +1,7 @@
-@(user: Option[User])(implicit lang: Lang, request: play.api.mvc.Request[Any])
-@import views.html.common.bootstrap._
+@(user: Option[User], vocabularyId:Long)(implicit lang: Lang, request: play.api.mvc.Request[Any])
+
 @main(Messages("wordDefinition.list.title"), user){
-<form class="form-inline">
-<div class="row">
-    <div class="span6">
-        <select id="sourceLanguage" name="sourceLanguage">
-            <option>Choose a language</option>
-            <option>English</option>
-            <option>Deutsch</option>
-            <option>Русский</option>
-        </select>
-        <input type="text" name="source" placeholder="Source word"/>
-    </div>
-    <div class="span6">
-        <select name="targetLanguage">
-            <option>Choose a language</option>
-            <option>English</option>
-            <option>Deutsch</option>
-            <option>Русский</option>
-        </select>
-        <input type="text" name="target" placeholder="Definition" />
-    </div>
-</div>
-<div class="row">
-    <div class="span12">
-        <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Add</button>
-        </div>
-    </div>
-</div>
-</form>
+    <a class="btn btn-success" href="@routes.WordDefinition.addWordView(vocabularyId)">
+        <i class="icon-plus"></i>
+        @Messages("wordDefinition.list.addLink.text")</a>
 }

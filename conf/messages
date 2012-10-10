@@ -36,4 +36,11 @@ security.signUp.form.name=Name
 language.changeLocale.pageHeader=Change the interface language
 
 wordDefinition.list.title=Words
+wordDefinition.list.form.legend=Add a word definition
+wordDefinition.list.addLink.text=Add a word definition
+wordDefinition.add.form.legend=Word definition
+wordDefinition.add.title=Add a word definition
+wordDefinition.add.form.source=Source
+wordDefinition.add.form.target=Target
+wordDefinition.add.form.submitButton=Add a word
 

@@ -1,0 +1,22 @@
+@(form: Form[models.WordDefinition],user: Option[User],languages: Seq[(String,String)],vocabularyId:Long)(implicit lang: Lang, request: play.api.mvc.Request[Any])
+@import views.html.common.bootstrap._
+@main(Messages("wordDefinition.add.title"), user){
+<form class="form-horizontal" method="POST">
+    <input type="hidden" name="vocabularyId" value="@vocabularyId" />
+    <fieldset>
+        <legend>@Messages("wordDefinition.add.form.legend")</legend>
+
+        @helper.inputText(form("source"),'_label -> Messages("wordDefinition.add.form.source"))
+        @helper.select(form("sourceLanguage"),languages,
+            '_label -> Messages("vocabulary.create.form.sourceLanguage"),
+            '_default -> Messages("vocabulary.create.form.sourceLanguageDefaultValue"))
+        @helper.inputText(form("target"), '_label -> Messages("wordDefinition.add.form.target"))
+        @helper.select(form("targetLanguage"),languages,
+            '_label -> Messages("vocabulary.create.form.targetLanguage"),
+            '_default -> Messages("vocabulary.create.form.targetLanguageDefaultValue"))
+    </fieldset>
+    <div class="form-actions">
+        <button class="btn btn-primary" type="submit">@Messages("wordDefinition.add.form.submitButton")</button>
+    </div>
+</form>
+}
