@@ -1,6 +1,7 @@
 @(form: Form[Vocabulary],user: Option[User],languages: Seq[(String,String)])(implicit lang: Lang, request: play.api.mvc.Request[Any])
 @import views.html.common.bootstrap._
 @main(Messages("vocabulary.create.title"), user){
+
      <form method="POST" class="form-horizontal">
          <fieldset>
              <legend>@Messages("vocabulary.create.form.legend")</legend>
