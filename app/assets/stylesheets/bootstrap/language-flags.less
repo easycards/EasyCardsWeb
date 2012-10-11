@@ -4,6 +4,7 @@
     margin: -11px -4px;
     display: inline-block;
     background-image:url("../../images/language-flags/sprite.png");
+    -webkit-background-size: 32px 98px;
     &.flag-gb{ background-position: 0 0; }
     &.flag-de{ background-position: 0 -33px;}
     &.flag-ru{ background-position: 0 -66px;}
@@ -14,9 +15,18 @@
     margin: -23px -8px;
     display: inline-block;
     background-image:url("../../images/language-flags/sprite-64.png");
+    -webkit-background-size: 64px 194px;
     &.flag-gb{ background-position: 0 0; }
     &.flag-de{ background-position: 0 -65px;}
     &.flag-ru{ background-position: 0 -130px;}
+}
+@media all and (-webkit-min-device-pixel-ratio:2) {
+    .flag {
+        background-image: url('../../images/language-flags/sprite-64.png');
+    }
+    .flag64 {
+        background-image: url('../../images/language-flags/sprite-128.png');
+    }
 }
 
 
