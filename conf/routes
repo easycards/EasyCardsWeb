@@ -3,24 +3,24 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                           							controllers.Application.index
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file               							controllers.Assets.at(path="/public", file)
 #Security
-GET     /login                      controllers.Security.loginView
-POST    /login                      controllers.Security.login
-GET     /signUp                     controllers.Security.signUpView
-POST    /signUp                     controllers.Security.signUp
-GET     /logout                     controllers.Security.logout
+GET     /login                      							controllers.Security.loginView
+POST    /login                      							controllers.Security.login
+GET     /signUp                     							controllers.Security.signUpView
+POST    /signUp                     							controllers.Security.signUp
+GET     /logout                     							controllers.Security.logout
 # Vocabulary
-GET     /book/create                controllers.Vocabulary.createView
-POST    /book/create                controllers.Vocabulary.create
-GET     /book/list                  controllers.Vocabulary.list
+GET     /book/create                							controllers.Vocabulary.createView
+POST    /book/create                							controllers.Vocabulary.create
+GET     /book/list                  							controllers.Vocabulary.list
 # WordDefinition
-GET     /book/:vocabularyId         controllers.WordDefinition.list(vocabularyId:Long)
-GET     /book/:vocabularyId/addWord controllers.WordDefinition.addWordView(vocabularyId:Long)
-POST    /book/:vocabularyId/addWord controllers.WordDefinition.addWord(vocabularyId:Long)
+GET     /book/:vocabularyId         							controllers.WordDefinition.list(vocabularyId:Long)
+GET     /book/:vocabularyId/card/add 							controllers.WordDefinition.addWordView(vocabularyId:Long)
+POST    /book/:vocabularyId/card/add 							controllers.WordDefinition.addWord(vocabularyId:Long)
 # Language
-GET     /language/change/:locale    controllers.Language.changeLocale(locale:String)
-GET     /languages                  controllers.Language.changeLocaleView
+GET     /language/change/:locale    							controllers.Language.changeLocale(locale:String)
+GET     /languages                  							controllers.Language.changeLocaleView
