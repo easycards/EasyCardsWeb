@@ -38,14 +38,6 @@ object Vocabulary extends ControllerBase with Secured {
     }
   }
 
-  def get = Action {
-    TODO
-  }
-
-  def remove = Action {
-    TODO
-  }
-
   def list = Action {
     implicit request => {
       val user = request.session.get("email").map {
@@ -55,7 +47,4 @@ object Vocabulary extends ControllerBase with Secured {
     }
   }
 
-  def update = Action {
-    TODO
-  }
 }

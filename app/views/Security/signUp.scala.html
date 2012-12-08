@@ -12,7 +12,7 @@
             <fieldset>
                 <legend>@Messages("security.signUp.form.legend")</legend>
                 @helper.inputText(form("name"), '_label -> Messages("security.signUp.form.name"))
-                @inputEmail(form("email"))
+                @helper.inputText(form("email"), 'type -> "email")
                 @helper.inputPassword(form("password"))
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">
