@@ -43,6 +43,9 @@ trait database extends After{
             """
             delete from vocabulary;
             ALTER SEQUENCE vocabulary_id_seq RESTART WITH 1;
+
+            delete from word_definition;
+            ALTER SEQUENCE word_definition_id_seq RESTART WITH 1;
             """
           ).executeUpdate()
       }
