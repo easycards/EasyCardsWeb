@@ -1,19 +1,19 @@
 package service
 
-import common.WordDefinitionService
-import models.WordDefinition
+import common.DefinitionService
+import models.Definition
 import play.api.db.DB
 import anorm._
-import models.WordDefinition
+import models.Definition
 import anorm.SqlParser._
-import models.WordDefinition
+import models.Definition
 import play.api.Play.current
 import anorm.~
 
-object WordDefinitionRepository extends WordDefinitionService {
-  def find(definitionId: Long): Option[WordDefinition] = ???
+object DefinitionRepository extends DefinitionService {
+  def find(definitionId: Long): Option[Definition] = ???
 
-  def addWord(word: WordDefinition): Long = {
+  def addWord(word: Definition): Long = {
     DB.withConnection {
       implicit connection =>
         SQL(
@@ -32,5 +32,5 @@ object WordDefinitionRepository extends WordDefinitionService {
     }
   }
 
-  def list(vocabularyId: Long):Seq[WordDefinition] = ???
+  def list(vocabularyId: Long):Seq[Definition] = ???
 }

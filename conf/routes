@@ -18,9 +18,9 @@ GET     /book/create                							controllers.Vocabulary.createView
 POST    /book/create                							controllers.Vocabulary.create
 GET     /book/list                  							controllers.Vocabulary.list
 # WordDefinition
-GET     /book/:vocabularyId         							controllers.WordDefinition.list(vocabularyId:Long)
-GET     /book/:vocabularyId/card/add 							controllers.WordDefinition.addWordView(vocabularyId:Long)
-POST    /book/:vocabularyId/card/add 							controllers.WordDefinition.addWord(vocabularyId:Long)
+GET     /book/:vocabularyId         							controllers.Definition.list(vocabularyId:Long)
+GET     /book/:vocabularyId/card/add 							controllers.Definition.addWordView(vocabularyId:Long)
+POST    /book/:vocabularyId/card/add 							controllers.Definition.addWord(vocabularyId:Long)
 # Language
 GET     /language/change/:locale    							controllers.Language.changeLocale(locale:String)
 GET     /languages                  							controllers.Language.changeLocaleView
